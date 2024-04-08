@@ -11,8 +11,8 @@ def circle_area(radius: float) -> float:
 
 def triangle_area(side1: float, side2: float, side3: float) -> float:
     # normal triangle checks
-    if min(side1, side2, side3) < 0:
-        raise NotATriangleError("one of the sides is negative")
+    if min(side1, side2, side3) <= 0:
+        raise NotATriangleError("one of the sides is negative or zero in length")
     if max(side1, side2, side3) > side1 + side2 + side3 - max(side1, side2, side3):
         raise NotATriangleError("one of the sides is too big")
     # certified classic formula
